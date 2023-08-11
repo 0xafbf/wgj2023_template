@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj5y17dryh1d7"]
+[gd_scene load_steps=9 format=3 uid="uid://bj5y17dryh1d7"]
 
 [ext_resource type="Theme" uid="uid://0v5v4nhe10f1" path="res://game/ui/ui_theme.tres" id="1_g480c"]
 [ext_resource type="Texture2D" uid="uid://ca7fo0s75lrou" path="res://game/ui/ui_game.png" id="2_n7t2v"]
 [ext_resource type="Script" path="res://game/scripts/ui_main_menu.gd" id="2_x7bta"]
 [ext_resource type="Texture2D" uid="uid://e6qdv6apjfmt" path="res://game/ui/wgj_co_bg.jpg" id="4_6ee4q"]
-[ext_resource type="Texture2D" uid="uid://bjtvkki8iu81f" path="res://icon.svg" id="4_syjrn"]
+[ext_resource type="Texture2D" uid="uid://0gujh2detn1l" path="res://game/ui/logos/Logo WGJ Colombia.png" id="5_xrphs"]
+[ext_resource type="Texture2D" uid="uid://dstxcci5rar05" path="res://game/ui/logos/Logo WIG.png" id="6_30j0k"]
 [ext_resource type="PackedScene" uid="uid://nshdbdlrbtto" path="res://game/ui/components/btn_close.tscn" id="6_adyw0"]
+[ext_resource type="Texture2D" uid="uid://dk4rmc3g0nkde" path="res://game/ui/logos/Logo TGYJ.png" id="7_lhopi"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -112,6 +114,7 @@ grow_vertical = 2
 theme_type_variation = &"PanelPause"
 
 [node name="Panel" type="Panel" parent="PanelCredits"]
+self_modulate = Color(0.831373, 0.831373, 0.831373, 1)
 clip_children = 2
 layout_mode = 1
 anchors_preset = 15
@@ -176,25 +179,33 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -469.0
-offset_top = -210.0
+offset_left = -912.0
+offset_top = -190.0
 offset_right = -77.0
 offset_bottom = -82.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_constants/separation = 30
+alignment = 2
 metadata/_edit_group_ = true
-
-[node name="TextureRect" type="TextureRect" parent="PanelCredits/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("4_syjrn")
 
 [node name="TextureRect2" type="TextureRect" parent="PanelCredits/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_syjrn")
+texture = ExtResource("5_xrphs")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="TextureRect3" type="TextureRect" parent="PanelCredits/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_syjrn")
+texture = ExtResource("6_30j0k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="PanelCredits/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_lhopi")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelCredits"]
 layout_mode = 1
