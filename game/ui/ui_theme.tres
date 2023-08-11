@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://0v5v4nhe10f1"]
+
+[ext_resource type="Texture2D" uid="uid://ca7fo0s75lrou" path="res://game/ui/ui_game.png" id="1_ljov7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k4bi4"]
+texture = ExtResource("1_ljov7")
+texture_margin_left = 72.0
+texture_margin_top = 57.0
+texture_margin_right = 72.0
+texture_margin_bottom = 58.0
+region_rect = Rect2(1581, 165, 290, 115)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2y6mo"]
+texture = ExtResource("1_ljov7")
+texture_margin_left = 72.0
+texture_margin_top = 57.0
+texture_margin_right = 72.0
+texture_margin_bottom = 58.0
+region_rect = Rect2(1581, 165, 290, 115)
+modulate_color = Color(0.847059, 0.847059, 0.847059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3lsn"]
+texture = ExtResource("1_ljov7")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(651, 769, 119, 121)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ehe7p"]
+texture = ExtResource("1_ljov7")
+region_rect = Rect2(651, 769, 119, 121)
+modulate_color = Color(0.698039, 0.698039, 0.698039, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2p0jk"]
+texture = ExtResource("1_ljov7")
+texture_margin_left = 109.0
+texture_margin_top = 98.0
+texture_margin_right = 114.0
+texture_margin_bottom = 103.0
+region_rect = Rect2(657, 41, 604, 428)
+
+[resource]
+Button/font_sizes/font_size = 21
+Button/styles/hover = SubResource("StyleBoxTexture_k4bi4")
+Button/styles/normal = SubResource("StyleBoxTexture_k4bi4")
+Button/styles/pressed = SubResource("StyleBoxTexture_2y6mo")
+ButtonLabel/base_type = &"Label"
+ButtonLabel/font_sizes/font_size = 48
+ButtonRound/base_type = &"Button"
+ButtonRound/styles/hover = SubResource("StyleBoxTexture_r3lsn")
+ButtonRound/styles/normal = SubResource("StyleBoxTexture_r3lsn")
+ButtonRound/styles/pressed = SubResource("StyleBoxTexture_ehe7p")
+PanelPause/base_type = &"Panel"
+PanelPause/styles/panel = SubResource("StyleBoxTexture_2p0jk")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://nshdbdlrbtto"]
+
+[ext_resource type="Texture2D" uid="uid://ca7fo0s75lrou" path="res://game/ui/ui_game.png" id="1_8snwj"]
+
+[node name="BtnClose" type="Button"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -119.0
+offset_top = -23.0
+offset_right = 35.0
+offset_bottom = 131.0
+grow_horizontal = 0
+theme_type_variation = &"ButtonRound"
+
+[node name="Icon" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -43.0
+offset_right = 37.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8snwj")
+region_rect = Rect2(736, 641, 63, 65)

@@ -1,0 +1,182 @@
+[gd_scene load_steps=4 format=3 uid="uid://brul4jwqksbrd"]
+
+[ext_resource type="Script" path="res://game/ui/ui_gameplay.gd" id="1_r1ehi"]
+[ext_resource type="Texture2D" uid="uid://ca7fo0s75lrou" path="res://game/ui/ui_game.png" id="1_x3ecp"]
+[ext_resource type="PackedScene" uid="uid://nshdbdlrbtto" path="res://game/ui/components/btn_close.tscn" id="2_eyrky"]
+
+[node name="UIGameplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r1ehi")
+
+[node name="UIHUD" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UIToolBar" type="Control" parent="UIHUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -429.0
+offset_bottom = 183.0
+grow_horizontal = 0
+
+[node name="BtnPause" type="Button" parent="UIHUD/UIToolBar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -77.0
+offset_right = -18.0
+offset_bottom = 77.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"ButtonRound"
+
+[node name="Icon" type="NinePatchRect" parent="UIHUD/UIToolBar/BtnPause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -43.0
+offset_right = 37.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x3ecp")
+region_rect = Rect2(1295, 632, 74, 79)
+
+[node name="UIPause" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="UIPause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.505882)
+
+[node name="Panel" type="Panel" parent="UIPause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = -439.0
+offset_right = 386.0
+offset_bottom = 439.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelPause"
+
+[node name="Label" type="Label" parent="UIPause/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -313.0
+offset_right = 175.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 121
+text = "Pausa"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPause/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 107.0
+offset_top = 417.0
+offset_right = -107.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="BtnResume" type="Button" parent="UIPause/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIPause/Panel/VBoxContainer/BtnResume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ButtonLabel"
+text = "Continuar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnSounds" type="Button" parent="UIPause/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIPause/Panel/VBoxContainer/BtnSounds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ButtonLabel"
+text = "Sonido: ON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnExit" type="Button" parent="UIPause/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIPause/Panel/VBoxContainer/BtnExit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ButtonLabel"
+text = "Salir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnClose" parent="UIPause/Panel" instance=ExtResource("2_eyrky")]
+layout_mode = 1
+offset_left = -128.0
+offset_top = -19.0
+offset_right = 26.0
+offset_bottom = 135.0
+
+[connection signal="pressed" from="UIHUD/UIToolBar/BtnPause" to="." method="_on_btn_pause_pressed"]
+[connection signal="pressed" from="UIPause/Panel/VBoxContainer/BtnResume" to="." method="_on_btn_resume_pressed"]
+[connection signal="pressed" from="UIPause/Panel/VBoxContainer/BtnSounds" to="." method="_on_btn_sounds_pressed"]
+[connection signal="pressed" from="UIPause/Panel/VBoxContainer/BtnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="UIPause/Panel/BtnClose" to="." method="_on_btn_close_pause_pressed"]

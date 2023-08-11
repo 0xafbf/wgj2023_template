@@ -1,0 +1,253 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj5y17dryh1d7"]
+
+[ext_resource type="Theme" uid="uid://0v5v4nhe10f1" path="res://game/ui/ui_theme.tres" id="1_g480c"]
+[ext_resource type="Texture2D" uid="uid://ca7fo0s75lrou" path="res://game/ui/ui_game.png" id="2_n7t2v"]
+[ext_resource type="Script" path="res://game/scripts/ui_main_menu.gd" id="2_x7bta"]
+[ext_resource type="Texture2D" uid="uid://e6qdv6apjfmt" path="res://game/ui/wgj_co_bg.jpg" id="4_6ee4q"]
+[ext_resource type="Texture2D" uid="uid://bjtvkki8iu81f" path="res://icon.svg" id="4_syjrn"]
+[ext_resource type="PackedScene" uid="uid://nshdbdlrbtto" path="res://game/ui/components/btn_close.tscn" id="6_adyw0"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g480c")
+script = ExtResource("2_x7bta")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.00392157, 0.105882, 1)
+
+[node name="TextureRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -394.0
+offset_right = 312.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n7t2v")
+region_rect = Rect2(1354, 796, 445, 253)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = 119.0
+offset_right = 289.0
+offset_bottom = 361.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="BtnPlay" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/BtnPlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -13.0
+offset_right = 20.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ButtonLabel"
+text = "Jugar"
+
+[node name="BtnCredits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/BtnCredits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -13.0
+offset_right = 20.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ButtonLabel"
+text = "Créditos"
+
+[node name="PanelCredits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -825.0
+offset_top = -443.0
+offset_right = 825.0
+offset_bottom = 443.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelPause"
+
+[node name="Panel" type="Panel" parent="PanelCredits"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelPause"
+
+[node name="BGOverlay" type="TextureRect" parent="PanelCredits/Panel"]
+modulate = Color(1, 1, 1, 0.231373)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -840.0
+offset_top = -859.0
+offset_right = 840.0
+offset_bottom = 821.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6ee4q")
+
+[node name="Label" type="Label" parent="PanelCredits"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.5
+offset_top = 37.0
+offset_right = 121.5
+offset_bottom = 123.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Créditos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelCredits"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 82.0
+offset_top = -162.0
+offset_right = 610.0
+offset_bottom = -75.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.529412)
+theme_override_font_sizes/font_size = 18
+text = "Plantilla:
+Arte: Ana Castro
+Montaje: 0xAFBF"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelCredits"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -469.0
+offset_top = -210.0
+offset_right = -77.0
+offset_bottom = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelCredits/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_syjrn")
+
+[node name="TextureRect2" type="TextureRect" parent="PanelCredits/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_syjrn")
+
+[node name="TextureRect3" type="TextureRect" parent="PanelCredits/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_syjrn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelCredits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -295.0
+offset_right = 518.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.443137)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/bold_font_size = 27
+bbcode_enabled = true
+text = "[center][table=2]
+[cell][right]Direccion    [/right][/cell]
+[cell][left]Ana Alvarez
+Blanca Bermúdez[/left][/cell]
+
+[cell][right]Arte    [/right][/cell]
+[cell][left]Carolina Cortez
+Diana Dominguez[/left][/cell]
+
+[cell][right]Programación    [/right][/cell]
+[cell][left]Francia Fernandez
+Diana Dominguez[/left][/cell]
+
+[cell][right]Testers    [/right][/cell]
+[cell][left]Carolina Cortez
+Diana Dominguez[/left][/cell]
+
+[/table]
+
+[b]Agradecimientos Especiales[/b]
+Mi mamá
+Mis amigos
+La hermosa comunidad de Tan Grande y Jugando[/center]"
+autowrap_mode = 0
+
+[node name="BtnCloseCredits" parent="PanelCredits" instance=ExtResource("6_adyw0")]
+layout_mode = 1
+offset_left = -129.0
+offset_top = -27.0
+offset_right = 25.0
+offset_bottom = 127.0
+
+[connection signal="pressed" from="VBoxContainer/BtnPlay" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnCredits" to="." method="_on_btn_credits_pressed"]
+[connection signal="pressed" from="PanelCredits/BtnCloseCredits" to="." method="_on_btn_close_credits_pressed"]
