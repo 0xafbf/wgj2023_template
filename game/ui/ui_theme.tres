@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://0v5v4nhe10f1"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://0v5v4nhe10f1"]
 
 [ext_resource type="Texture2D" uid="uid://ca7fo0s75lrou" path="res://game/ui/ui_game.png" id="1_ljov7"]
+[ext_resource type="FontFile" uid="uid://bh4i3tnh5c4s5" path="res://game/ui/Marvin-Round.otf" id="2_10wk0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k4bi4"]
 texture = ExtResource("1_ljov7")
@@ -51,5 +52,6 @@ ButtonRound/base_type = &"Button"
 ButtonRound/styles/hover = SubResource("StyleBoxTexture_r3lsn")
 ButtonRound/styles/normal = SubResource("StyleBoxTexture_r3lsn")
 ButtonRound/styles/pressed = SubResource("StyleBoxTexture_ehe7p")
+Label/fonts/font = ExtResource("2_10wk0")
 PanelPause/base_type = &"Panel"
 PanelPause/styles/panel = SubResource("StyleBoxTexture_2p0jk")
